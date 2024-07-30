@@ -1,0 +1,7 @@
+{
+  "name": "ukm",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

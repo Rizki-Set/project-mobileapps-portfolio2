@@ -1,2 +1,212 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+// Define CSS Variables
+:root {
+--ion-font-family: "Fira Sans", sans-serif;
+  --ion-background-color: #ffffff !important; /* Warna latar belakang biru */
+  --ion-color-light: #ffffff !important; /* Ubah dengan warna latar belakang yang diinginkan */
+  --ion-card-background: #ffffff !important; /* Tambahkan ini jika belum ada */
+  --ion-card-color: #000000 !important; /* Tambahkan ini jika belum ada */
+  --ion-input-color: #363637; /* Warna biru untuk ikon */
+
+}
+
+
+// Color Variables (SCSS)
+// Make sure this block is placed before or after the CSS variable definitions if needed
+$colors: (
+  primary:    #3880ff,
+  secondary:  #040405,
+  tertiary:   #7044ff,
+  success:    #10dc60,
+  warning:    #ffce00,
+  danger:     #f04141,
+  dark:       #222428,
+  medium:     #989aa2,
+  light:      #f4f5f8,
+  background: #ffffff,
+  text:       #000000,
+  border:     #dddddd,
+  shadow:     rgba(0, 0, 0, 0.2),
+  transparent: transparent,
+);
+
+// Additional Styling or Theme Customizations
+// Example of customizing other Ionic components
+ion-button {
+  --background: var(--ion-color-primary);
+  --color: #ffffff; // Text color on the button
+}
+
+// Theme
+$theme: (
+  // Background Color
+  'background-color': color('background'),
+
+  // Text Color
+  'text-color': color('text'),
+
+  // Border Color
+  'border-color': color('border'),
+
+  // Shadow Color
+  'shadow-color': color('shadow'),
+
+  // Primary Color
+  'color-primary': color('primary'),
+
+  // Header
+  'header-background-color': color('primary'),
+  'header-text-color': contrast(color('primary')),
+  'header-border-color': color('border'),
+  'header-shadow-color': color('shadow'),
+
+  // Footer
+  'footer-background-color': color('primary'),
+  'footer-text-color': contrast(color('primary')),
+  'footer-border-color': color('border'),
+  'footer-shadow-color': color('shadow'),
+
+  // Tabs
+  'tabs-background-color': color('primary'),
+  'tabs-text-color': contrast(color('primary')),
+  'tabs-highlight-color': contrast(color('primary')),
+  'tabs-border-color': color('border'),
+  'tabs-shadow-color': color('shadow'),
+
+  // Segment
+  'segment-background-color': color('primary'),
+  'segment-text-color': contrast(color('primary')),
+  'segment-highlight-color': contrast(color('primary')),
+  'segment-border-color': color('border'),
+  'segment-shadow-color': color('shadow'),
+
+  // Button
+  'button-background-color': color('primary'),
+  'button-text-color': contrast(color('primary')),
+  'button-icon-color': contrast(color('primary')),
+  'button-border-color': color('border'),
+  'button-shadow-color': color('shadow'),
+
+  // Card
+  'card-background-color': color('light'),
+  'card-text-color': color('dark'),
+  'card-border-color': color('border'),
+  'card-shadow-color': color('shadow'),
+
+  // Checkbox
+  'checkbox-background-color': color('primary'),
+  'checkbox-checkmark-color': contrast(color('primary')),
+  'checkbox-border-color': color('primary'),
+  'checkbox-shadow-color': color('shadow'),
+
+  // Radio
+  'radio-background-color': color('primary'),
+  'radio-border-color': color('primary'),
+  'radio-inner-circle-color': contrast(color('primary')),
+  'radio-shadow-color': color('shadow'),
+
+  // Range
+  'range-background-color': color('primary'),
+  'range-bar-background-color': color('medium'),
+  'range-knob-color': color('primary'),
+  'range-pin-background': color('primary'),
+  'range-shadow-color': color('shadow'),
+
+  // Toggle
+  'toggle-background-color': color('primary'),
+  'toggle-checked-background-color': color('primary'),
+  'toggle-checked-handle-color': contrast(color('primary')),
+  'toggle-shadow-color': color('shadow'),
+
+  // Input
+  'input-background-color': color('light'),
+  'input-text-color': color('dark'),
+  'input-placeholder-color': color('medium'),
+  'input-border-color': color('medium'),
+  'input-highlight-color': color('primary'),
+  'input-shadow-color': color('shadow'),
+
+  // Select
+  'select-background-color': color('light'),
+  'select-text-color': color('dark'),
+  'select-border-color': color('border'),
+  'select-shadow-color': color('shadow'),
+
+  // Badge
+  'badge-background-color': color('primary'),
+  'badge-text-color': contrast(color('primary')),
+  'badge-border-color': color('border'),
+  'badge-shadow-color': color('shadow'),
+
+  // Toast
+  'toast-background-color': color('dark'),
+  'toast-text-color': color('light'),
+  'toast-button-color': color('primary'),
+  'toast-shadow-color': color('shadow'),
+
+  // Modal
+  'modal-background-color': color('light'),
+  'modal-text-color': color('dark'),
+  'modal-border-color': color('border'),
+  'modal-shadow-color': color('shadow'),
+
+  // Popover
+  'popover-background-color': color('light'),
+  'popover-text-color': color('dark'),
+  'popover-border-color': color('border'),
+  'popover-shadow-color': color('shadow'),
+
+  // Action Sheet
+  'action-sheet-background-color': color('light'),
+  'action-sheet-text-color': color('dark'),
+  'action-sheet-header-color': color('primary'),
+  'action-sheet-button-color': color('primary'),
+  'action-sheet-border-color': color('border'),
+  'action-sheet-shadow-color': color('shadow'),
+
+  // Alert
+  'alert-background-color': color('light'),
+  'alert-text-color': color('dark'),
+  'alert-button-color': color('primary'),
+  'alert-border-color': color('border'),
+  'alert-shadow-color': color('shadow'),
+
+  // Spinner
+  'spinner-color': color('primary'),
+
+  // Fab
+  'fab-background-color': color('primary'),
+  'fab-text-color': contrast(color('primary')),
+  'fab-border-color': color('border'),
+  'fab-shadow-color': color('shadow'),
+);
+
+// Fonts
+$font-family-base: 'Helvetica Neue', Arial, sans-serif;
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-lg: 18px;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$line-height-base: 1.5;
+$text-transform-base: none;
+
+// Spacing
+$spacing-unit: 16px;
+$spacing-xs: calc(#{$spacing-unit} / 2);
+$spacing-sm: $spacing-unit;
+$spacing-md: $spacing-unit * 2;
+$spacing-lg: $spacing-unit * 3;
+$spacing-xl: $spacing-unit * 4;
+
+// Border Radius
+$border-radius-base: 4px;
+$border-radius-sm: 2px;
+$border-radius-lg: 8px;
+
+// Box Shadow
+$box-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.15);

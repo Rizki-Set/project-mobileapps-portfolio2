@@ -1,0 +1,17 @@
+[33mcommit 6e50f7ceb9590dd32be0d701126e3349818e0324[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Your Name <rizki>
+Date:   Wed Aug 7 22:59:12 2024 +0700
+
+    Menambahkan .gitattributes untuk penanganan akhir baris otomatis
+
+[33mcommit 090605fd8afac36dc532c627b188d1db509144cb[m
+Author: Your Name <rizki>
+Date:   Sat Aug 3 10:20:56 2024 +0700
+
+    Update project files and add authentication service
+
+[33mcommit e9b02e4e9e0eb321486dbc1875559f01969677e3[m
+Author: Your Name <rizki>
+Date:   Wed Jul 31 06:28:00 2024 +0700
+
+    Initial commit

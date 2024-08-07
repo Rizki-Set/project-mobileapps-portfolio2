@@ -27,6 +27,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&display=swap');
 
 
+
 /* global.scss */
 
 ion-content {
@@ -43,6 +44,7 @@ ion-card{
 }
 
 ion-button {
+  align-items: flex-start;
   margin: 10px;
   padding: 5px;
   font-size: 13px;
@@ -77,10 +79,16 @@ ion-title {
   margin: 10px;
 }
 
-ion-icon {
-  color: var(--ion-input-color, ) !important;
-  font-size: 24px !important;
+.custom-button {
+  font-size: 24px !important; /* Ukuran ikon */
+  height: 40px !important; /* Tinggi tombol */
+  width: 40px !important; /* Lebar tombol */
+  padding: 0 !important; /* Hapus padding */
+  margin: 10px !important; /* Hapus margin */
+  --border-radius: 15px !important; /* Border-radius */
+  --box-shadow: none !important; /* Hapus box-shadow */
 }
+
 
 
 

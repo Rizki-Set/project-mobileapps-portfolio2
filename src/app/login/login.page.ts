@@ -13,25 +13,59 @@ export class LoginPage implements OnInit {
   password: string = '';
 
   constructor(
-    private router: Router,
-    private authService: AuthService
+    public router: Router,
+    public auth: AuthService
   ) { }
 
   masuk() {
-    if (this.email && this.password) {
-      this.authService.login(this.email, this.password).then(() => {
-        this.router.navigate(['home']);
-      }).catch((error) => {
-        console.error('login failed', error);
-      });
-    } else {
-      console.error('Email and password must be provided');
-    }
+    this.auth.login(this.email, this.password).then(user => {
+      const uid = user.user?.uid;
+      if (uid) {
+        // Menggunakan observer untuk subscribe
+        const observer = {
+          next: (res: any) => {
+            if (res.role === 'admin') {
+              this.router.navigate(['home']);
+            } else {
+              this.auth.toast('Akun Ini Tidak Memiliki Akses');
+              this.email = '';
+              this.password = '';
+              this.auth.logout();
+            }
+          },
+          error: (error: any) => {
+            this.auth.toast('Gagal mengambil data pengguna.');
+            console.error('Error fetching user data: ', error);
+          },
+          complete: () => {
+            console.log('User data fetching completed');
+          }
+        };
+        this.auth.user(uid).subscribe(observer);
+      } else {
+        this.auth.toast('Login gagal. User ID tidak ditemukan.');
+        this.email = '';
+        this.password = '';
+        this.auth.logout();
+      }
+    }).catch(async (err: any) => {
+      this.email = '';
+      this.password = '';
+      if (err.code === 'auth/invalid-email') {
+        await this.auth.toast('Format Email Salah');
+      } else if (err.code === 'auth/user-not-found') {
+        await this.auth.toast('Akun Tidak Ditemukan');
+      } else if (err.code === 'auth/wrong-password') {
+        await this.auth.toast('Kata Sandi Salah');
+      } else {
+        await this.auth.toast('Login gagal. Silakan coba lagi.');
+      }
+      console.log(err.code);
+    });
   }
 
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit() {
+    console.log('LoginPage initialized');
   }
 
 }
-

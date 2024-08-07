@@ -13,6 +13,9 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment'; // Hanya satu impor environment
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthService} from './services/auth.service'; // Pastikan ini diimpor
+
 
 
 @NgModule({
@@ -24,10 +27,13 @@ import { environment } from '../environments/environment'; // Hanya satu impor e
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     IonicModule.forRoot(),
+      FormsModule,
+       ReactiveFormsModule,
     AppRoutingModule
   ],
 
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

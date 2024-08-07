@@ -14,7 +14,7 @@
       ],
       "rules": {
         "@angular-eslint/component-class-suffix": [
-          "error",
+          "warn",
           {
             "suffixes": ["Page", "Component"]
           }

@@ -1,20 +1,23 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Home</ion-title>
+        <ion-buttons slot="end">
+      <ion-button routerLink="/akun" class="custom-button">
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of menu" size="3">
+        <ion-card button class="ion-no-margin ion-text-center menu" [routerLink]="item.link">
+<ion-icon class="custom-large-icon" color="primary" [name]="item.icon"></ion-icon>
+<div class="menu-label">{{ item.label }}</div>
+</ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

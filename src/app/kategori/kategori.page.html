@@ -1,0 +1,32 @@
+<ion-header class="ion-header-border">
+  <ion-toolbar>
+    <ion-title>Kategori</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf ="kategori">
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button routerLink="/kategori-add">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Tampil pesan jika tidak ada kategori -->
+<ion-card *ngIf="kategori.length === 0" class="ion-text-center">
+  <ion-card-header>
+    <ion-card-title class="bold-text">Belum Ada Kategori</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>Silahkan Tambah Dahulu Kategori Produk Anda</ion-card-content>
+<ion-buttom class="add-category-button" routerLink="/kategori-add">Tambah Kategori</ion-buttom>
+</ion-card>
+
+<!-- Tampil kategori jika ada -->
+<ion-card *ngFor="let item of kategori">
+  <ion-item lines="none">
+    <ion-label>{{item.nama}}</ion-label>
+  </ion-item>
+</ion-card>
+</ion-content>

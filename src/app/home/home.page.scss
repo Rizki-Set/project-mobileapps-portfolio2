@@ -1,27 +1,30 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.custom-large-icon {
+  padding: 8px;
+  margin-top: 7px;
+  font-size: 4rem; /* Sesuaikan dengan ukuran yang diinginkan */
+  width: 4rem;     /* Sesuaikan ukuran lebar */
+  height: 4rem;    /* Sesuaikan ukuran tinggi */
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+// home.page.scss
+
+// Style untuk ion-fab
+ion-fab {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+// Style untuk ion-card dengan tidak ada kategori
+.ion-card {
+  margin: 16px;
 }
 
-#container a {
-  text-decoration: none;
+.add-category-button {
+  margin: 16px;
+}
+
+// Style untuk ion-button
+ion-button {
+  margin: 8px;
 }

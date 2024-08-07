@@ -9,4 +9,9 @@ export class HomePage {
 
   constructor() {}
 
+menu: any [] = [
+{label: 'Kategori',
+icon: 'file-tray-stacked',
+link: '/kategori'}
+];
 }

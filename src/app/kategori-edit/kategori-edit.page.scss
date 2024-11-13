@@ -1,0 +1,29 @@
+ion-footer ion-button::part(native) {
+  font-size: 18px;
+  width: 95%;
+  margin: 10px auto;
+  background-color: var(--ion-color-primary) !important;
+  color: #ffffff !important;
+  border: none;
+  box-shadow: none;
+  border-radius: 20px;
+}
+
+ion-footer {
+  --ion-toolbar-background: transparent !important;
+}
+
+ion-item.form {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+  border-radius: 8px; /* Tambahkan border radius untuk sudut yang melengkung */
+  margin: 10px; /* Tambahkan margin untuk memberikan ruang antar elemen */
+  padding: 10px; /* Tambahkan padding untuk memberikan ruang di dalam elemen */
+}
+
+ion-item.form ion-input,
+ion-item.form ion-textarea {
+  font-size: 18px; /* Atur ukuran teks menjadi 18px */
+  color: #000000; /* Pastikan warna teks tetap terlihat */
+      background-color: #ffffff !important;
+}
+

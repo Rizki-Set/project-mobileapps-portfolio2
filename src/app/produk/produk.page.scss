@@ -1,0 +1,101 @@
+/* Gaya untuk card produk */
+.product-card {
+  margin-bottom: 15px; /* Jarak bawah antara card produk */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk card produk */
+  border-radius: 8px; /* Sudut melengkung pada card */
+  padding: 10px; /* Padding di dalam card */
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  flex-direction: row; /* Mengatur item dalam baris horizontal */
+  align-items: flex-start; /* Menyelaraskan item secara vertikal di atas */
+  gap: 15px; /* Jarak antara gambar dan konten card */
+  flex-wrap: wrap; /* Mengizinkan card membungkus pada baris baru jika perlu */
+}
+
+/* Gaya untuk gambar produk */
+.product-image {
+  width: 80px; /* Lebar gambar produk */
+  height: 80px; /* Tinggi gambar produk */
+  border-radius: 8px; /* Sudut melengkung pada gambar */
+  object-fit: cover; /* Menjaga proporsi gambar */
+}
+
+/* Gaya untuk konten produk */
+.product-content {
+  flex: 1; /* Membuat konten produk mengambil ruang yang tersedia */
+  display: flex;
+  flex-direction: column; /* Mengatur item dalam kolom vertikal */
+  justify-content: space-between; /* Menyelaraskan item dengan jarak yang sama */
+  gap: 8px; /* Jarak antara elemen dalam konten produk */
+}
+
+/* Gaya untuk deskripsi produk */
+.product-description {
+  margin: 0; /* Menghapus margin tambahan */
+  line-height: 1.4; /* Jarak antar baris untuk kenyamanan baca */
+  max-height: 4.2em; /* Batasi tinggi maksimum deskripsi (3 baris) */
+  overflow: hidden; /* Sembunyikan teks yang melebihi batas */
+  text-overflow: ellipsis; /* Tambahkan ellipsis (...) jika teks terpotong */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Batasi hingga 3 baris */
+  -webkit-box-orient: vertical; /* Orientasi vertikal untuk multi-line ellipsis */
+}
+
+/* Gaya untuk tombol edit dan delete */
+.button-group {
+  display: flex; /* Menggunakan flexbox untuk tata letak tombol */
+  justify-content: flex-end; /* Menyelaraskan tombol ke kanan */
+  gap: 10px; /* Jarak antara tombol */
+}
+
+/* Gaya untuk tombol edit */
+.edit-button,
+.delete-button {
+  margin: 0; /* Menghilangkan margin default */
+  padding: 5px 10px; /* Padding di dalam tombol */
+  font-size: 14px; /* Ukuran font tombol */
+}
+
+/* Gaya untuk tombol delete */
+.delete-button {
+  color: white; /* Warna teks tombol hapus */
+}
+
+/* Media query untuk perangkat mobile */
+@media (max-width: 600px) {
+  .product-card {
+    flex-direction: column; /* Mengatur item dalam kolom vertikal untuk mobile */
+    align-items: flex-start; /* Menyelaraskan item ke kiri */
+  }
+
+  .button-group {
+    justify-content: flex-start; /* Menyelaraskan tombol ke kiri pada perangkat mobile */
+    width: 100%; /* Mengatur lebar tombol agar penuh pada perangkat mobile */
+    margin-top: 10px; /* Jarak atas antara tombol dan konten */
+  }
+
+  .edit-button,
+  .delete-button {
+    width: 48%; /* Lebar tombol setengah dari kontainer */
+  }
+}
+
+/* Gaya untuk toast wrapper */
+.toast-wrapper {
+  position: fixed;
+  bottom: 10px; /* Atur jarak dari bawah */
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto; /* Sesuaikan lebar jika perlu */
+  z-index: 10000; /* Pastikan z-index lebih tinggi dari elemen lain */
+  display: flex;
+  justify-content: center;
+}
+
+/*
+.product-card: Mengatur gaya untuk card produk termasuk bayangan, sudut melengkung, padding, dan tata letak flex horizontal.
+.product-image: Mengatur gaya untuk gambar produk termasuk ukuran, sudut melengkung, dan jarak.
+.product-content: Memastikan konten card produk menggunakan ruang yang tersedia.
+.button-group: Mengatur gaya untuk grup tombol, termasuk tata letak flex dan penjajaran.
+.edit-button, .delete-button: Mengatur padding, ukuran font, dan gaya untuk tombol edit dan hapus.
+@media (max-width: 600px): Mengatur gaya khusus untuk perangkat mobile dengan lebar layar maksimal 600px, termasuk tata letak vertikal dan penyesuaian tombol.
+*/

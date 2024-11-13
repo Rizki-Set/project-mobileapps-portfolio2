@@ -4,6 +4,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../../environments/environment';
 
+
 describe('AuthService', () => {
   let service: AuthService;
 beforeEach(async () => {

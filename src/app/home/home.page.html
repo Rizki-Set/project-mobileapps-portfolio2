@@ -1,23 +1,88 @@
-<ion-header class="ion-no-border">
+<!-- Header tanpa border dengan judul dan tombol akun -->
+<ion-header class="ion-no-border custom-header">
   <ion-toolbar>
     <ion-title>Home</ion-title>
-        <ion-buttons slot="end">
+    <!-- Tombol akun di pojok kanan atas -->
+    <ion-buttons slot="end">
       <ion-button routerLink="/akun" class="custom-button">
         <ion-icon slot="icon-only" name="person"></ion-icon>
       </ion-button>
-      </ion-buttons>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let item of menu" size="3">
+      <!-- Mengatur agar setiap kolom berukuran 6 (total ada 2 kolom per baris di layar kecil dan 4 di layar besar) -->
+      <ion-col size="6" size-md="6" *ngFor="let item of menu; let i = index">
+        <!-- Ion card dengan margin dihilangkan agar tampilan lebih rapih -->
         <ion-card button class="ion-no-margin ion-text-center menu" [routerLink]="item.link">
-<ion-icon class="custom-large-icon" color="primary" [name]="item.icon"></ion-icon>
-<div class="menu-label">{{ item.label }}</div>
-</ion-card>
+          <!-- Ikon besar sesuai dengan menu yang diambil dari array menu -->
+          <ion-icon class="custom-large-icon" color="primary" [name]="item.icon"></ion-icon>
+          <!-- Label menu ditampilkan sesuai item -->
+          <div class="menu-label">{{ item.label }}</div>
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<!-- Footer dengan tiga kolom: Kontak, Informasi, dan Media Sosial -->
+<ion-footer>
+  <ion-toolbar class="custom-footer">
+    <div class="footer-section">
+      <!-- Kolom Kontak -->
+      <div class="footer-column">
+        <h3 class="footer-title">Kontak Kami</h3>
+        <p class="footer-text">Alamat: Jl. Cipinang Lontar No.10, Jakarta</p>
+        <p class="footer-text">Telepon: (021) 123-4567</p>
+        <p class="footer-text">Email: Rizkisetiawan1616&#64;gmail.com</p>
+      </div>
+
+      <!-- Kolom Link Informasi -->
+      <div class="footer-column">
+        <h3 class="footer-title">Informasi Lainnya</h3>
+        <ul class="footer-links">
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Layanan</a></li>
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">Kontak</a></li>
+        </ul>
+      </div>
+
+      <!-- Kolom Media Sosial -->
+      <div class="footer-column">
+        <h3 class="footer-title">Ikuti Kami</h3>
+        <div class="social-media-icons">
+          <!-- Ikon media sosial dengan link -->
+          <a href="#" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href="#" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="#" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+
+<!--
+Header (ion-header):
+Menggunakan ion-toolbar untuk menampilkan judul halaman ("Home") dan tombol akun di sebelah kanan.
+Tombol akun menggunakan routerLink untuk navigasi ke halaman akun (/akun) saat diklik.
+
+Ion Grid dan Ion Row:
+Grid dan row digunakan untuk mengatur tata letak menu dalam bentuk grid.
+*ngFor digunakan untuk melakukan loop pada array menu, menampilkan item menu secara dinamis.
+Setiap kolom (ion-col) diatur agar ukurannya 6, sehingga ada dua kolom per baris di layar kecil, dan tetap dua kolom di layar sedang.
+
+Ion Card (Menu):
+Setiap menu ditampilkan sebagai ion-card dengan ikon dan label yang diambil dari array menu.
+routerLink digunakan untuk navigasi ke halaman yang sesuai saat kartu diklik.
+
+Footer (ion-footer):
+Footer dibagi menjadi tiga kolom: "Kontak Kami", "Informasi Lainnya", dan "Ikuti Kami".
+Setiap kolom memiliki konten yang relevan seperti detail kontak, link informasi, dan ikon media sosial.
+
+Kustomisasi CSS:
+Kelas seperti ion-no-border, custom-header, custom-footer, custom-large-icon, dan lainnya digunakan untuk menambahkan gaya khusus.
+-->

@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="header-title">Product Management</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-button class="add-product-button" (click)="showAddForm()">Add New Product</ion-button>
+
+  <ion-card *ngFor="let product of products" class="product-card">
+    <img [src]="product.imageUrl || 'assets/img/default-product.jpg'" class="product-image" />
+    <ion-card-content class="product-content">
+      <h2>{{ product.name }}</h2>
+      <p>Price: {{ product.price | currency }}</p>
+      <p *ngIf="product.stock">Stock: {{ product.stock }}</p>
+      <p class="product-description" *ngIf="product.description">Description: {{ product.description }}</p>
+    </ion-card-content>
+    <div class="button-group">
+      <ion-button class="edit-button" (click)="editProductWithParams(product)">Edit</ion-button>
+      <ion-button class="delete-button" color="danger" (click)="deleteProduct(product.id)">Delete</ion-button>
+    </div>
+  </ion-card>
+
+  <!-- Form untuk menambah produk baru -->
+  <ion-card *ngIf="showAddProductForm" class="form-card">
+    <ion-card-header>
+      <ion-card-title>Add Product</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Product Name</ion-label>
+        <ion-input id="new-product-name" [(ngModel)]="newProduct.name" placeholder="Enter product name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Product Price</ion-label>
+        <ion-input id="new-product-price" [(ngModel)]="newProduct.price" type="number" placeholder="Enter product price"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Product Stock</ion-label>
+        <ion-input id="new-product-stock" [(ngModel)]="newProduct.stock" type="number" placeholder="Enter product stock"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Product Description</ion-label>
+        <ion-input id="new-product-description" [(ngModel)]="newProduct.description" placeholder="Enter product description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Product Image</ion-label>
+        <input type="file" (change)="uploadFile($event)" />
+      </ion-item>
+      <ion-button class="submit-button" expand="full" (click)="addProduct()">Add Product</ion-button>
+      <ion-button class="cancel-button" expand="full" color="medium" (click)="hideAddForm()">Cancel</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Form untuk mengedit produk -->
+  <ion-card *ngIf="isEditing" class="form-card">
+    <ion-card-header>
+      <ion-card-title>Edit Product</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Product Name</ion-label>
+        <ion-input id="edit-product-name" [(ngModel)]="editProductData.name" placeholder="Enter product name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Product Price</ion-label>
+        <ion-input id="edit-product-price" [(ngModel)]="editProductData.price" type="number" placeholder="Enter product price"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Product Stock</ion-label>
+        <ion-input id="edit-product-stock" [(ngModel)]="editProductData.stock" type="number" placeholder="Enter product stock"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Product Description</ion-label>
+        <ion-input id="edit-product-description" [(ngModel)]="editProductData.description" placeholder="Enter product description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Product Image</ion-label>
+        <input type="file" (change)="uploadFile($event)" />
+      </ion-item>
+      <ion-button class="submit-button" expand="full" (click)="editProduct()">Save Changes</ion-button>
+      <ion-button class="cancel-button" expand="full" color="medium" (click)="cancelEdit()">Cancel</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="custom-footer-products">
+    <ion-title class="ion-text-center">
+      - Afiza Store | Kepuasan Anda Prioritas Kami! -
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
+
+
+

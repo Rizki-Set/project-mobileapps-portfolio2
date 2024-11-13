@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Keranjang Belanja</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of cart">
+      <ion-label>
+        <h2>{{ item.name }}</h2>
+        <p>Harga: {{ item.price }} x {{ item.quantity }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>Total: {{ totalAmount }}</ion-title>
+    </ion-toolbar>
+    <ion-button expand="full" (click)="proceedToCheckout()">Checkout</ion-button>
+  </ion-footer>
+</ion-content>
+

@@ -1,32 +1,62 @@
 <ion-header class="ion-header-border">
   <ion-toolbar>
+    <!-- Judul halaman Kategori -->
     <ion-title>Kategori</ion-title>
+    <!-- Tombol kembali ke halaman sebelumnya -->
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf ="kategori">
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+<!-- Konten halaman -->
+<ion-content *ngIf="kategori">
+  <!-- Tampilkan Floating Action Button (FAB) jika ada data kategori -->
+  <ion-fab *ngIf="kategori.length > 0" vertical="bottom" horizontal="end">
+    <!-- Tombol untuk menambah kategori baru, diarahkan ke route /kategori-add -->
     <ion-fab-button routerLink="/kategori-add">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- Tampil pesan jika tidak ada kategori -->
-<ion-card *ngIf="kategori.length === 0" class="ion-text-center">
-  <ion-card-header>
-    <ion-card-title class="bold-text">Belum Ada Kategori</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>Silahkan Tambah Dahulu Kategori Produk Anda</ion-card-content>
-<ion-buttom class="add-category-button" routerLink="/kategori-add">Tambah Kategori</ion-buttom>
-</ion-card>
+  <!--
+  Jika tidak ada kategori, tampilkan pesan bahwa belum ada kategori
+  Bisa digunakan jika ingin memberikan opsi untuk menambah kategori pertama kali
+  <ion-card *ngIf="kategori.length === 0" class="ion-text-center">
+    <ion-card-header>
+      <ion-card-title class="bold-text">Belum Ada Kategori</ion-card-title>
+    </ion-card-header>
+    <ion-card-content style="margin-top: 0px;">
+      Silahkan Tambah Dahulu Kategori Produk Anda
+    </ion-card-content>
+    <ion-button style="margin-top: 3px;" class="add-category-button" routerLink="/kategori-add">Tambah Kategori</ion-button>
+  </ion-card>
+  -->
 
-<!-- Tampil kategori jika ada -->
-<ion-card *ngFor="let item of kategori">
-  <ion-item lines="none">
-    <ion-label>{{item.nama}}</ion-label>
-  </ion-item>
-</ion-card>
+  <!-- Looping untuk menampilkan setiap kategori yang ada -->
+  <ion-card *ngFor="let item of kategori">
+    <!-- Tombol untuk mengedit kategori berdasarkan ID, diarahkan ke route /kategori-edit/{id} -->
+    <ion-item button lines="none" [routerLink]="['/kategori-edit', item.id]">
+      <ion-label>{{item.Nama}}</ion-label>
+    </ion-item>
+  </ion-card>
 </ion-content>
+
+<!--
+<ion-header> dan <ion-toolbar>
+Menyusun header halaman dengan judul "Kategori" dan tombol back menggunakan <ion-back-button>, yang secara otomatis mengarahkan pengguna kembali ke halaman sebelumnya.
+
+<ion-content *ngIf="kategori">:
+Menampilkan konten hanya jika data kategori tersedia (tidak null atau undefined).
+
+Floating Action Button (FAB):
+Tombol melayang yang digunakan untuk menambah kategori baru. Tombol ini hanya muncul jika ada kategori yang sudah terdaftar (kategori.length > 0).
+Menggunakan routerLink="/kategori-add" untuk mengarahkan pengguna ke halaman penambahan kategori.
+
+Menampilkan Pesan Jika Belum Ada Kategori (Opsional):
+Jika belum ada kategori (kategori.length === 0), bisa menampilkan pesan beserta tombol untuk menambah kategori. Bagian ini sudah dikomentari sebagai contoh.
+
+Looping Data Kategori:
+Menggunakan *ngFor="let item of kategori" untuk menampilkan setiap kategori yang ada.
+Setiap kategori ditampilkan dalam <ion-card> dengan label nama kategori, dan tombol untuk mengeditnya berdasarkan ID kategori.
+-->

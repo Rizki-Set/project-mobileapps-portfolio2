@@ -1,14 +1,78 @@
 <ion-content color="primary">
-  <ion-card>
-    <ion-item class="form" lines="none">
-      <ion-icon slot="start" name="mail" color="primary"></ion-icon>
-      <ion-input class="custom-input" type="email" placeholder="Alamat email" [(ngModel)]="email"></ion-input>
-    </ion-item>
-    <ion-item class="form" lines="none">
-      <ion-icon slot="start" name="key" color="primary"></ion-icon>
-      <ion-input class="custom-input" type="password" placeholder="Kata sandi" [(ngModel)]="password"></ion-input>
-    </ion-item>
+  <!-- Bagian untuk menampilkan logo -->
+  <div class="logo-container">
+    <img src="assets/icon/R.png" alt="Logo" class="logo">
+  </div>
 
-    <ion-button expand="block" [disabled]="!email || !password" (click)="masuk()">MASUK</ion-button>
-  </ion-card>
+  <!-- Container untuk form login dan tombol daftar -->
+  <div class="form-container">
+    <!-- Form Login -->
+    <ion-card>
+      <!-- Input untuk email -->
+      <ion-item class="form" lines="none">
+        <ion-icon slot="start" name="mail" color="primary"></ion-icon>
+        <ion-input class="custom-input" type="email" placeholder="Alamat email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <!-- Input untuk password -->
+      <ion-item class="form" lines="none">
+        <ion-icon slot="start" name="key" color="primary"></ion-icon>
+        <ion-input class="custom-input" type="password" placeholder="Kata sandi" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <!-- Tombol untuk login -->
+      <ion-button expand="block" [disabled]="!email || !password" (click)="masuk()">MASUK</ion-button>
+    </ion-card>
+
+    <!-- Link untuk beralih ke form registrasi -->
+    <ion-button expand="block" fill="clear" (click)="toggleForm()">Belum punya akun? Daftar disini</ion-button>
+  </div>
+
+  <!-- Form Registrasi (hanya muncul jika isRegistering = true) -->
+  <!-- Form Registrasi (hanya muncul jika isRegistering = true) -->
+<ion-card *ngIf="isRegistering">
+  <!-- Input untuk nama lengkap -->
+  <ion-item class="form" lines="none">
+    <ion-icon slot="start" name="person" color="primary"></ion-icon>
+    <ion-input class="custom-input" type="text" placeholder="Nama Lengkap" [(ngModel)]="nama"></ion-input>
+  </ion-item>
+  <!-- Input untuk email -->
+  <ion-item class="form" lines="none">
+    <ion-icon slot="start" name="mail" color="primary"></ion-icon>
+    <ion-input class="custom-input" type="email" placeholder="Alamat Email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+  <!-- Input untuk password -->
+  <ion-item class="form" lines="none">
+    <ion-icon slot="start" name="key" color="primary"></ion-icon>
+    <ion-input class="custom-input" type="password" placeholder="Kata Sandi" [(ngModel)]="password"></ion-input>
+  </ion-item>
+  <!-- Input untuk konfirmasi password -->
+  <ion-item class="form" lines="none">
+    <ion-icon slot="start" name="key" color="primary"></ion-icon>
+    <ion-input class="custom-input" type="password" placeholder="Konfirmasi Kata Sandi" [(ngModel)]="confirmPassword"></ion-input>
+  </ion-item>
+  <!-- Pilihan role -->
+<!-- Pilihan role -->
+<ion-item class="form" lines="none">
+  <ion-label>Role</ion-label>
+  <ion-select [(ngModel)]="selectedRole" placeholder="Pilih role">
+    <ion-select-option value="customer">Customer</ion-select-option>
+    <ion-select-option value="admin">Admin</ion-select-option>
+  </ion-select>
+</ion-item>
+  <!-- Tombol untuk registrasi -->
+  <ion-button expand="block" [disabled]="!email || !password || password !== confirmPassword" (click)="daftar()">DAFTAR</ion-button>
+</ion-card>
 </ion-content>
+
+
+<!--
+Logo Container: Bagian ini untuk menampilkan logo aplikasi. (<div class="logo-container">)
+Form Login: Terdiri dari dua input (email dan password) dan sebuah tombol "MASUK".
+Tombol Toggle Registrasi: Jika pengguna belum punya akun, mereka bisa klik tombol untuk membuka form registrasi.
+Form Registrasi: Muncul hanya jika variabel isRegistering bernilai true. Terdiri dari input nama, email, password, dan konfirmasi password.
+
+Logika Sederhana:
+Tombol "MASUK" hanya bisa diklik jika email dan password sudah diisi.
+Tombol "DAFTAR" hanya aktif jika email, password, dan konfirmasi password sudah diisi dan password serta konfirmasi password cocok.
+-->
+

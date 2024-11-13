@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Super Admin Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Registered Clients Section -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registered Clients</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let user of users">
+          <ion-label>
+            {{ user.email }}
+          </ion-label>
+          <ion-button color="danger" (click)="deleteUser(user.id)">Delete</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Registered Sellers Section -->
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Registered Sellers</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let user of userDetails">
+        <ion-label>
+          {{ user.email }}
+        </ion-label>
+        <ion-button color="danger" (click)="deleteAdmin(user.id)">Delete</ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+
+  <!-- Logout Button -->
+  <ion-footer>
+    <ion-toolbar>
+      <ion-button expand="block" (click)="logout()" class="custom-logout-button">Keluar</ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
+
+
+
+
+

@@ -1,26 +1,20 @@
 ion-title {
-  font-size: 25px !important; /* Atur ukuran font sesuai kebutuhan */
+  font-size: 28px !important; /* Atur ukuran font sesuai kebutuhan */
 }
 
 .bold-text {
-  font-weight: bold !important;
-  font-size: 1.2rem !important; /* Sesuaikan ukuran font jika perlu */
+  font-weight: bold;
+  font-size: 2rem !important; /* Sesuaikan ukuran */
+  color: black;
 }
 
-/* kategori.page.scss */
-.kategori-title {
-  font-weight: bold !important;
-  font-size: 1.5rem !important;
-  margin-top: 30px !important;
+ion-label {
+  color: black; /* Mengubah warna teks menjadi hitam */
 }
 
-ion-card {
-  padding: 15px; /* Atur padding sesuai kebutuhan */
-}
-
-ion-content {
-  padding-top: 5; /* Mengurangi padding di bagian atas jika perlu */
-}
+  ion-item {
+    color: black; /* Mengubah warna teks menjadi hitam */
+  }
 
 
 

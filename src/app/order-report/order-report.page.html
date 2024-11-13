@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Order Report</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let order of orders">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md="6">
+            <ion-label>
+              <h2>Order ID: {{ order.id }}</h2>
+              <p>Product Name: {{ order.productName }}</p>
+
+              <!-- Show quantity controls only if status is pending -->
+              <p *ngIf="order.status === 'Pending'">Quantity:
+                <ion-button (click)="decreaseQuantity(order)" fill="outline" size="small" [disabled]="order.quantity <= 1">-</ion-button>
+                <span>{{ order.quantity }}</span>
+                <ion-button (click)="increaseQuantity(order)" fill="outline" size="small">+</ion-button>
+              </p>
+
+              <p *ngIf="order.status !== 'Pending'">Quantity: {{ order.quantity }}</p>
+
+              <p>Order Date: {{ order.timestamp?.toDate() | date:'medium' }}</p>
+              <p>Status:  <ion-label [color]="order.status === 'success' ? 'success' : 'danger'">
+                 {{ order.status }}
+              </ion-label></p>
+              <p>Price: {{ order.price | currency:'IDR' }}</p>
+              <p>Total: {{ order.totalPrice | currency:'IDR' }}</p>
+            </ion-label>
+
+            <!-- Show 'Bayar' button if the status is pending -->
+            <ion-button *ngIf="order.status === 'Pending'" (click)="payOrder(order)" expand="block">
+              Bayar
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

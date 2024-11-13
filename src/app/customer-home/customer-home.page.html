@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="header-title">Product List</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/cart']">
+        <ion-icon name="cart" style="font-size: 28px; margin-right: 16px;"></ion-icon>
+        <ion-badge *ngIf="cartCount > 0">{{ cartCount }}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <section class="products-container">
+    <ion-card *ngFor="let product of products" class="product-card">
+      <ion-card-header>
+        <ion-card-title>{{ product.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="product-content">
+        <ion-img [src]="product.imageUrl || 'assets/img/default-product.jpg'" alt="{{ product.name }}" class="product-image"></ion-img>
+        <p class="product-price">{{ product.price | currency }}</p>
+        <p class="product-stock">Stock: {{ product.stock }}</p>
+        <p class="product-description" *ngIf="product.description">{{ product.description }}</p>
+
+        <!-- <div class="quantity-control">
+          <ion-button fill="outline" (click)="decreaseQuantity(product)" class="quantity-button">-</ion-button>
+          <span class="quantity">{{ product.quantity || 0 }}</span>
+          <ion-button fill="outline" (click)="increaseQuantity(product)" class="quantity-button">+</ion-button>
+        </div> -->
+
+        <div class="order-button-container">
+          <ion-button expand="full" (click)="orderProduct(product)" class="order-button">Order</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </section>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="custom-footer-products">
+    <ion-title class="ion-text-center">
+      - Afiza Store | Kepuasan Anda Prioritas Kami! -
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

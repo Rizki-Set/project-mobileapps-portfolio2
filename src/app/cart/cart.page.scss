@@ -1,0 +1,67 @@
+ion-content {
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+ion-list {
+  --ion-item-padding-start: 16px;
+}
+
+ion-item {
+  font-size: 16px; /* Ukuran font yang lebih besar untuk keterbacaan */
+  display: flex;
+  align-items: center;
+}
+
+ion-thumbnail {
+  width: 100px; /* Ukuran thumbnail yang lebih besar */
+  height: 100px;
+}
+
+ion-thumbnail img {
+  width: 100px; // Sesuaikan ukuran
+  height: 100px; // Sesuaikan ukuran
+  object-fit: cover; // Memastikan gambar tidak terdistorsi
+}
+
+ion-label h2 {
+  font-size: 18px; /* Ukuran font yang lebih besar untuk judul item */
+}
+
+ion-card {
+  padding: 16px; /* Padding untuk card yang lebih baik */
+}
+
+ion-button {
+  margin-top: 20px; /* Margin lebih besar untuk tombol checkout */
+}
+
+@media (max-width: 600px) {
+  ion-thumbnail {
+    width: 70px;
+    height: 70px;
+  }
+
+  ion-label h2 {
+    font-size: 16px;
+  }
+}
+
+ion-label {
+  h2 {
+    font-size: 16px;
+    margin: 0;
+  }
+  p {
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+

@@ -1,11 +1,58 @@
+/* Gaya untuk container logo */
+/*
+margin-top dan margin-bottom: Menambahkan ruang di atas dan di bawah logo.
+border-radius: 50%; Membuat gambar menjadi bulat.
+object-fit: cover; Memastikan gambar terpotong dengan baik di dalam bentuk bulat.
+box-shadow: Menambahkan bayangan halus untuk memberikan efek profesional.
+*/
+.logo-container {
+  display: flex;
+  justify-content: center; /* Posisikan logo di tengah secara horizontal */
+  margin-top: 20px; /* Jarak dari atas */
+  margin-bottom: 20px; /* Jarak dari konten */
+}
+
+.logo {
+  width: 150px; /* Ukuran logo */
+  height: 150px; /* Pastikan tinggi dan lebar sama untuk membuatnya bulat */
+  border-radius: 50%; /* Membuat logo menjadi bulat */
+  object-fit: cover; /* Memastikan gambar pas dalam elemen bundar */
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.2); /* Tambahkan sedikit bayangan agar terlihat profesional */
+}
+
+/* Gaya untuk container form */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%; /* Pastikan container menggunakan 100% lebar yang tersedia */
+  max-width: 600px; /* Atur lebar maksimal container sesuai keinginan */
+  margin: 0 auto; /* Agar container tetap berada di tengah */
+  gap: 1rem; /* Menambahkan jarak antara elemen */
+}
+
+/* Gaya untuk ion-item form */
 ion-item.form {
   --background: #f1f0f0 !important; /* Ubah warna latar belakang ion-item */
 }
 
+/* Gaya untuk ion-card */
+ion-card {
+  margin-bottom: 1rem; /* Menambahkan jarak bawah pada kartu */
+}
 
+/* Gaya untuk ion-button */
+ion-button {
+  margin-top: 1rem; /* Menambahkan jarak atas pada tombol */
+}
 
-
-
-
-
-
+/* Responsive design untuk layar kecil */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 1rem; /* Mengurangi padding pada layar kecil */
+    max-width: 100%; /* Memastikan lebar penuh di layar kecil */
+        font-size: 0.9rem; /* Mengurangi ukuran font di layar kecil */
+    }
+}

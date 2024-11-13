@@ -36,7 +36,7 @@ ion-content {
 
 ion-header ion-toolbar {
   --background: #ffffff !important; /* Ubah warna latar belakang ion-toolbar */
-  --color: #0000ff !important; /* Ubah warna teks ion-title menjadi biru */
+  --color: #0054e9 !important; /* Ubah warna teks ion-title menjadi biru */
 }
 
 ion-card{
@@ -46,9 +46,9 @@ ion-card{
 ion-button {
   align-items: flex-start;
   margin: 10px;
-  padding: 5px;
+  padding: 0px;
   font-size: 13px;
-  height: 50px;
+  height: 40px;
   font-weight: 500;
   --border-radius:15px;
   --box-shadow: none;
@@ -63,14 +63,14 @@ ion-input {
 }
 
 ion-input input {
-  font-size: 20px !important; /* Atur ukuran font sesuai kebutuhan */
+  font-size: 18px !important; /* Atur ukuran font sesuai kebutuhan */
   color: #020212 !important; /* Warna teks biru */
 }
 
 ion-title {
-  --color: #0000ff !important; /* Warna teks biru */
-  font-size: 40px !important; /* Atur ukuran font sesuai kebutuhan */
-  font-weight: 200 !important; /* Optional: Atur ketebalan font jika diperlukan */
+  --color: #0054e9 !important; /* Warna teks biru */
+  font-size: 28px !important; /* Atur ukuran font sesuai kebutuhan */
+  font-weight: bold !important; /* Optional: Atur ketebalan font jika diperlukan */
 }
 
 .form {
@@ -89,7 +89,24 @@ ion-title {
   --box-shadow: none !important; /* Hapus box-shadow */
 }
 
+/* Footer untuk Produk */
+.custom-footer-products {
+  background-color: rgba(var(--ion-color-primary-rgb), 0.8) !important; /* Background primary dengan transparansi */
+  color: var(--ion-color-primary) !important; /* Teks putih */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /* Bayangan */
+}
 
+/* Footer untuk Home */
+.custom-footer-home {
+  background-color: rgba(var(--ion-color-primary-rgb), 0.8) !important; /* Background primary dengan transparansi */
+  color: rgb(0, 0, 0) !important; /* Teks putih */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /* Bayangan */
+}
+
+:root {
+  --ion-color-primary: #007bff; /* Warna primary biru */
+  --ion-color-primary-rgb: 0, 123, 255; /* RGB dari warna primary */
+}
 
 
 /**

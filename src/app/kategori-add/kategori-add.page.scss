@@ -1,0 +1,59 @@
+.custom-card {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #000000;
+  outline: none;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+ion-footer ion-button::part(native) {
+  font-size: 18px;
+  width: 95%;
+  margin: 10px auto;
+  background-color: var(--ion-color-primary) !important;
+  color: #ffffff !important;
+  border: none;
+  box-shadow: none;
+  border-radius: 20px;
+}
+
+ion-footer {
+  --ion-toolbar-background: transparent !important;
+}
+
+ion-item.form {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+  border-radius: 8px; /* Tambahkan border radius untuk sudut yang melengkung */
+  margin: 10px; /* Tambahkan margin untuk memberikan ruang antar elemen */
+  padding: 10px; /* Tambahkan padding untuk memberikan ruang di dalam elemen */
+  background-color: #ffffff; /* Tambahkan background color */
+}
+
+ion-item.form ion-input,
+ion-item.form ion-textarea {
+  font-size: 18px; /* Atur ukuran teks menjadi 18px */
+  color: #000000; /* Pastikan warna teks tetap terlihat */
+      background-color: #ffffff !important;
+}
+
+ion-list-header {
+  padding-left: 25px !important; /* Mengatasi spesifisitas atau shadow DOM issues */
+}
+
+ion-button[fill="clear"] {
+  --background: transparent; /* Menghapus background */
+  --border: none; /* Menghapus border */
+  --box-shadow: none; /* Menghapus shadow */
+  padding: 0; /* Menghapus padding */
+}
+
+ion-icon {
+  font-size: 24px; /* Ukuran ikon */
+}
+
+ion-button[fill="clear"] ion-icon {
+  font-size: 24px; /* Ukuran ikon */
+  color: #ff0000; /* Warna merah khusus */
+}

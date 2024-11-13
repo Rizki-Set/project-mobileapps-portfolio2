@@ -1,30 +1,216 @@
+/* Gaya untuk header */
+.custom-header {
+  background: linear-gradient(135deg, #3686ef, #6fa3ef); /* Gradient background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Bayangan yang lebih profesional */
+  padding: 10px 20px;
+}
+
+/* Gaya untuk toolbar */
+ion-toolbar {
+  background-color: #ffffff; /* Background warna toolbar solid */
+  border-radius: 10px; /* Border radius untuk sedikit melengkungkan sudut */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Bayangan lembut untuk kesan kedalaman */
+  padding: 50px 50px;
+}
+
+/* Gaya untuk judul */
+ion-title {
+  font-size: 3.2rem; /* Ukuran font lebih besar untuk judul */
+  font-weight: 700; /* Lebih tebal untuk profesionalisme */
+}
+
+/* Gaya untuk button */
+.custom-button {
+  --background: rgba(255, 255, 255, 0.15); /* Warna background transparan */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Border putih semi transparan */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih tegas */
+  border-radius: 50%; /* Membuat button bulat */
+  padding: 14px; /* Padding di dalam button untuk ukuran lebih besar */
+  font-size: 2rem; /* Ukuran font ikon */
+  transition: all 0.3s ease; /* Transisi efek hover */
+}
+
+.custom-button:hover {
+  --background: rgba(255, 255, 255, 0.25); /* Background lebih terang saat hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
+  transform: scale(1.08); /* Efek memperbesar saat di-hover */
+}
+
+/* Gaya untuk ikon di dalam button */
+.custom-button ion-icon {
+  font-size: 2.6rem; /* Ukuran ikon */
+}
+
+/* Tambahan padding untuk memastikan konten terlihat seimbang */
+ion-toolbar {
+  padding: 0 15px;
+}
+
+/* Gaya untuk ion-content */
+ion-content {
+  --background: #f5f5f5; /* Latar belakang konten */
+  display: flex;
+  flex-direction: column; /* Menyusun item secara vertikal */
+  justify-content: center; /* Tengah horizontal */
+  align-items: center; /* Tengah vertikal */
+  padding: 20px 0; /* Hapus padding default */
+  height: 100vh;
+}
+
+/* Gaya untuk ion-grid */
+ion-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Tengah horizontal */
+  align-items: center; /* Tengah vertikal */
+  width: 100%; /* Lebar penuh dari kontainer */
+  max-width: 600px; /* Maksimal lebar grid */
+  margin-top: 65px; /* Geser grid dari atas */
+}
+
+/* Gaya untuk ion-row */
+ion-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Tengah horizontal */
+}
+
+/* Gaya untuk kolom dalam grid */
+ion-col {
+  flex: 1 0 50%; /* Lebar kolom 50% dari kontainer untuk dua kolom per baris */
+  max-width: 50%; /* Maksimal lebar kolom adalah 50% dari kontainer */
+  padding: 10px; /* Padding untuk kolom */
+}
+
+/* Gaya untuk card menu */
+.menu {
+  --padding: 20px; /* Padding untuk card */
+  border-radius: 8px; /* Border-radius untuk card */
+  background-color: #ffffff; /* Background card */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Bayangan card */
+  text-align: center; /* Center teks di dalam card */
+}
+
+/* Gaya untuk label dalam card */
+.menu-label {
+  font-size: 13px; /* Ukuran font untuk label */
+  font-weight: bold; /* Tebal font */
+  color: var(--ion-color-primary); /* Warna teks sesuai dengan primary */
+}
+
+/* Gaya untuk ikon besar dalam card */
 .custom-large-icon {
-  padding: 8px;
-  margin-top: 7px;
-  font-size: 4rem; /* Sesuaikan dengan ukuran yang diinginkan */
-  width: 4rem;     /* Sesuaikan ukuran lebar */
-  height: 4rem;    /* Sesuaikan ukuran tinggi */
+  font-size: 5rem; /* Ukuran ikon */
+  margin-bottom: 10px; /* Jarak antara ikon dan label */
 }
 
-// home.page.scss
-
-// Style untuk ion-fab
-ion-fab {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
+/* Gaya untuk footer */
+/* Menjaga footer tetap di bawah */
+ion-footer {
+  background-color: #dcdfe2; /* Warna latar belakang */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek mengambang */
+  padding: 25px;
+  color: #ffffff;
 }
 
-// Style untuk ion-card dengan tidak ada kategori
-.ion-card {
-  margin: 16px;
+/* Bagian untuk tata letak kolom footer */
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px; /* Jarak antar kolom */
+  padding: 0 20px;
 }
 
-.add-category-button {
-  margin: 16px;
+.footer-column {
+  flex: 1;
+  min-width: 250px;
 }
 
-// Style untuk ion-button
-ion-button {
-  margin: 8px;
+/* Gaya untuk judul di footer */
+ion-footer {
+  background-color: #3686ef;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  color: #ffffff;
+}
+
+/* Bagian untuk tata letak kolom footer */
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 20px; /* Tambahkan padding kiri dan kanan */
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px; /* Pastikan kolom memiliki lebar minimum yang cukup */
+}
+
+/* Gaya untuk judul di footer */
+.footer-title {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-left: 10px; /* Tambahkan padding kiri untuk memberi jarak */
+}
+
+/* Gaya untuk teks informasi kontak */
+.footer-text {
+  margin: 4px 0;
+  font-size: 1rem;
+  padding-left: 10px; /* Tambahkan padding kiri untuk memberi jarak */
+}
+
+/* Gaya untuk daftar link tambahan */
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 10px; /* Tambahkan padding kiri untuk memberi jarak */
+}
+
+.footer-links li {
+  margin: 5px 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 1rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Gaya untuk ikon media sosial */
+.social-media-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding-left: 10px; /* Tambahkan padding kiri untuk memberi jarak */
+}
+
+.social-media-icons a {
+  font-size: 2rem;
+  color: #000000;
+}
+
+.social-media-icons a:hover {
+  color: #e9bc09;
+}
+
+.custom-input {
+  min-width: 200px; /* Atur min-width sesuai kebutuhan */
+}
+
+@media (max-width: 600px) {
+  .custom-input {
+    font-size: 0.9rem; /* Mengurangi ukuran font di layar kecil */
+  }
 }

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Payment Error</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Payment Failed</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>An error occurred while processing your payment. Please try again later.</p>
+      <p *ngIf="errorMessage">{{ errorMessage }}</p>
+      <!-- Tambahkan informasi lain jika diperlukan -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>

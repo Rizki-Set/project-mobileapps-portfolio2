@@ -1,0 +1,80 @@
+ion-card {
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+ion-card-header {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  border-radius: 10px 10px 0 0;
+}
+
+ion-card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+ion-card-content {
+  padding: 20px;
+}
+
+ion-item {
+  --background: #fff;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ion-label {
+  font-size: 1em;
+  color: #333;
+}
+
+ion-button {
+  --background: #ff6b6b;
+  --border-radius: 50px;
+  --box-shadow: 0 4px 8px rgba(255, 107, 107, 0.4);
+}
+
+ion-button:hover {
+  --background: #ff4b4b;
+}
+
+ion-card {
+  margin: 20px;
+}
+
+ion-card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+ion-button {
+  margin-left: 10px;
+}
+
+.custom-logout-button {
+  --background: #007bff; /* Warna latar belakang tombol */
+  --color: #ffffff; /* Warna teks tombol */
+  --border-radius: 12px; /* Radius sudut tombol */
+  --padding-start: 16px; /* Padding kiri tombol */
+  --padding-end: 16px; /* Padding kanan tombol */
+  --border: none; /* Menghilangkan border tombol */
+  --box-shadow: none; /* Menghilangkan shadow tombol jika ada */
+
+  font-size: 16px; /* Ukuran font */
+  font-weight: bold; /* Berat font */
+
+  &:hover {
+    --background: #0056b3; /* Warna latar belakang tombol saat hover (biru gelap) */
+    --color: #ffffff; /* Warna teks tombol saat hover */
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow tombol saat hover (opsional) */
+  }
+}
+
+
+
+

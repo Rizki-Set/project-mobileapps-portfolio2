@@ -1,0 +1,160 @@
+/* Container untuk merapikan tata letak produk */
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Kartu produk */
+.product-card {
+  width: calc(100% - 20px); /* Menggunakan lebar penuh di layar kecil */
+  max-width: 300px; /* Batasan maksimal untuk lebar kartu */
+  margin: 10px;
+  border-radius: 12px; /* Sedikit lebih kecil dari sebelumnya untuk desain modern */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffff; /* Warna latar belakang putih untuk kartu */
+}
+
+/* Efek hover untuk kartu */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Gambar produk dengan object-fit contain */
+.product-image {
+  width: 100%;
+  height: 200px; /* Tinggi gambar yang disarankan */
+  object-fit: contain; /* Menjaga proporsi gambar tanpa memotongnya */
+  border-radius: 12px 12px 0 0; /* Sudut melengkung hanya di bagian atas */
+  background-color: #f9f9f9; /* Warna latar belakang netral */
+  margin-bottom: 10px;
+}
+
+/* Nama produk */
+ion-card-title {
+  font-size: 1.3rem; /* Sedikit lebih besar untuk menonjolkan nama produk */
+  font-weight: 600; /* Berat font lebih tebal */
+  text-align: center;
+  color: #333;
+}
+
+/* Harga produk */
+.product-price {
+  font-size: 1.1rem; /* Sedikit lebih besar untuk menonjolkan harga */
+  font-weight: 700; /* Berat font lebih tebal */
+  text-align: center;
+  margin: 10px 0;
+  color: #27ae60; /* Warna hijau untuk harga */
+}
+
+/* Deskripsi produk */
+.product-description {
+  font-size: 0.9rem;
+  color: #100606; /* Warna deskripsi */
+  text-align: center;
+  margin: 10px 0;
+  line-height: 1.6; /* Jarak antar baris */
+}
+
+/* Kontrol kuantitas */
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+/* Tombol kuantitas */
+.quantity-button {
+  --background: #f0f0f0; /* Warna latar belakang tombol */
+  --color: #333; /* Warna teks tombol */
+  --border-color: #ddd; /* Warna border tombol */
+  --border-radius: 50%; /* Bentuk bulat untuk tombol */
+  --padding: 0; /* Menghapus padding default */
+  width: 36px; /* Lebar tombol */
+  height: 36px; /* Tinggi tombol */
+  font-size: 1.5rem; /* Ukuran font tombol */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  border: none; /* Menghapus border tombol */
+  border-radius: 50%; /* Bentuk bulat tombol */
+  background: var(--background); /* Latar belakang tombol */
+  color: var(--color); /* Warna teks tombol */
+  transition: background 0.3s ease, transform 0.3s ease; /* Animasi latar belakang dan transformasi */
+}
+
+/* Kuantitas */
+.quantity {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 10px;
+}
+
+/* Efek hover untuk tombol kuantitas */
+.quantity-button:hover {
+  background: #e0e0e0; /* Latar belakang saat hover */
+  transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+/* Elemen stok produk */
+.product-stock {
+  font-size: 1rem; /* Ukuran font untuk stok */
+  font-weight: 600; /* Berat font untuk stok */
+  text-align: center; /* Pusatkan teks */
+  margin: 10px 0; /* Jarak atas dan bawah */
+  color: #000000; /* Warna teks */
+  display: flex; /* Membuat elemen menjadi flex container */
+  justify-content: center; /* Memusatkan elemen secara horizontal */
+  align-items: center; /* Memusatkan elemen secara vertikal */
+}
+
+/* Tombol order */
+.order-button {
+  --background: #2b4ecf; /* Warna tombol */
+  --border-radius: 25px; /* Sudut tombol lebih melengkung */
+  --box-shadow: none;
+  font-size: 1rem; /* Ukuran font sedikit lebih besar */
+  padding: 10px; /* Padding tambahan untuk tombol */
+  color: #ffffff; /* Warna teks tombol putih */
+}
+
+/* Footer */
+.custom-footer-products {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.ion-text-center {
+  font-size: 1.1rem; /* Ukuran font sedikit lebih besar untuk footer */
+  font-weight: 500;
+}
+
+/* Memperbesar ukuran ikon di header */
+ion-button {
+  --padding: 8px; /* Padding tambahan untuk tombol */
+}
+
+ion-badge {
+  font-size: 12px; /* Ukuran font untuk badge */
+  height: 24px; /* Tinggi badge */
+  width: 24px; /* Lebar badge */
+  --border-radius: 50%; /* Bentuk bulat badge */
+  display: flex; /* Menyusun badge secara fleksibel */
+  align-items: center; /* Memusatkan badge */
+  justify-content: center; /* Memusatkan badge */
+}
+
+@media (max-width: 768px) {
+  .order-button {
+    width: 100%;
+  }
+}
+
+

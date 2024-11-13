@@ -1,0 +1,58 @@
+/* ion-header mengatur tampilan header */
+ion-header {
+  --background: #007bff; /* Warna latar belakang header menjadi biru */
+  --color: white; /* Warna teks di header menjadi putih */
+}
+
+/* ion-title mengatur tampilan judul di header */
+ion-title {
+  text-align: center; /* Teks judul di tengah */
+  font-size: 24px; /* Ukuran font judul menjadi 24px */
+  font-weight: bold; /* Font judul dibuat tebal */
+}
+
+/* ion-content mengatur tampilan konten utama */
+ion-content {
+  padding: 16px; /* Ruang di dalam konten ditambah 16px */
+  background-color: #f5f5f5; /* Warna latar belakang konten menjadi abu-abu terang */
+}
+
+/* ion-list mengatur tampilan daftar item */
+ion-list {
+  background: white; /* Warna latar belakang daftar menjadi putih */
+  border-radius: 8px; /* Sudut-sudut daftar dibuat melengkung dengan radius 8px */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan halus di bawah daftar */
+}
+
+/* ion-item mengatur tampilan setiap item di dalam daftar */
+ion-item {
+  margin-bottom: 12px; /* Ruang bawah antar item di daftar sebesar 12px */
+  padding: 16px; /* Ruang di dalam item ditambah 16px */
+  border-bottom: 1px solid #ddd; /* Garis bawah item dengan warna abu-abu */
+}
+
+/* ion-label h2 mengatur tampilan heading di dalam label */
+ion-label h2 {
+  font-size: 18px; /* Ukuran font heading menjadi 18px */
+  font-weight: bold; /* Font heading dibuat tebal */
+  color: #333; /* Warna teks heading menjadi abu-abu gelap */
+}
+
+/* ion-label p mengatur tampilan paragraf di dalam label */
+ion-label p {
+  font-size: 14px; /* Ukuran font paragraf menjadi 14px */
+  color: #666; /* Warna teks paragraf menjadi abu-abu sedang */
+}
+
+/* ion-label p:last-child mengatur tampilan paragraf terakhir di dalam label */
+ion-label p:last-child {
+  margin-bottom: 0; /* Menghilangkan margin bawah di paragraf terakhir */
+}
+
+/* ion-item diulang untuk memastikan styling konsisten */
+ion-item {
+  margin-bottom: 12px; /* Ruang bawah antar item di daftar sebesar 12px */
+  padding: 16px; /* Ruang di dalam item ditambah 16px */
+  border-bottom: 1px solid #ddd; /* Garis bawah item dengan warna abu-abu */
+}
+

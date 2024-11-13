@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+  <!-- Header halaman -->
+  <ion-toolbar>
+    <ion-title>Kelola Kategori</ion-title>
+    <ion-buttons slot="start">
+      <!-- Tombol untuk kembali ke halaman sebelumnya -->
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="kategori">
+  <!-- Konten halaman yang hanya tampil jika kategori ada -->
+
+  <!-- Input untuk nama kategori -->
+  <ion-item class="form" lines="none">
+    <ion-input
+      type="text"
+      placeholder="Nama Kategori"
+      [(ngModel)]="kategori.Nama">
+    </ion-input>
+  </ion-item>
+
+  <!-- Input untuk keterangan singkat kategori -->
+  <ion-item class="form" lines="none">
+    <ion-textarea
+      rows="4"
+      placeholder="Keterangan Singkat"
+      style="color: #000000;"
+      [(ngModel)]="kategori.keterangan">
+    </ion-textarea>
+  </ion-item>
+
+  <!-- Tombol untuk menghapus kategori -->
+  <ion-button
+    expand="block"
+    fill="clear"
+    color="danger"
+    (click)="hapus()">
+    Hapus Kategori
+  </ion-button>
+</ion-content>
+
+<ion-footer>
+  <!-- Footer halaman -->
+  <ion-toolbar>
+    <!-- Tombol simpan yang hanya aktif jika kategori ada dan memiliki nama -->
+    <ion-button
+      [disabled]="!kategori || !kategori.Nama"
+      expand="block"
+      (click)="simpan()">
+      Simpan
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+<!--
+<ion-header>:
+Menampilkan header halaman dengan judul "Kelola Kategori".
+Menggunakan ion-back-button untuk kembali ke halaman sebelumnya.
+
+<ion-content>:
+Konten utama halaman yang hanya ditampilkan jika kategori ada (*ngIf="kategori").
+Input Nama Kategori: ion-input untuk memasukkan nama kategori.
+Textarea Keterangan Singkat: ion-textarea untuk menambahkan keterangan singkat mengenai kategori.
+Tombol Hapus Kategori: ion-button dengan warna merah (color="danger") untuk menghapus kategori.
+
+<ion-footer>:
+Menampilkan footer halaman.
+Tombol Simpan: ion-button yang hanya aktif jika kategori ada dan memiliki nama ([disabled]="!kategori || !kategori.Nama"). Tombol ini akan memanggil fungsi simpan() saat diklik.
+-->

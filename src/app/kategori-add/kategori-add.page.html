@@ -1,0 +1,80 @@
+<!-- Header bagian atas halaman -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!-- Judul halaman -->
+    <ion-title>Kategori Baru</ion-title>
+    <!-- Tombol kembali ke halaman sebelumnya -->
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Konten utama halaman -->
+<ion-content>
+  <!-- Input untuk nama kategori -->
+  <ion-item class="form" lines="none">
+    <!-- ngModel digunakan untuk mengikat input ke variabel kategori.Nama di TypeScript -->
+    <ion-input type="text" placeholder="Nama Kategori" [(ngModel)]="kategori.Nama"></ion-input>
+  </ion-item>
+
+  <!-- Input untuk keterangan singkat kategori -->
+  <ion-item class="form" lines="none">
+    <!-- Textarea dengan ngModel terhubung ke kategori.keterangan -->
+    <ion-textarea rows="4" placeholder="Keterangan Singkat" style="color: #000000;" [(ngModel)]="kategori.keterangan"></ion-textarea>
+  </ion-item>
+
+  <!-- Header kecil untuk daftar subkategori -->
+  <ion-list-header>
+    <ion-label style="font-size: 1.5rem;">Sub Kategori</ion-label>
+  </ion-list-header>
+
+  <!-- Input untuk menambahkan subkategori -->
+  <ion-item class="form" lines="none">
+    <!-- ngModel untuk input subkategori -->
+    <ion-input type="text" placeholder="Nama Sub-Kategori" [(ngModel)]="subkategori"></ion-input>
+    <!-- Tombol tambah subkategori, memanggil fungsi addSub() -->
+    <!-- Tombol ini dinonaktifkan jika input subkategori kosong -->
+    <ion-button slot="end" (click)="addSub()" [disabled]="!subkategori">Tambah</ion-button>
+  </ion-item>
+
+  <!-- Menampilkan daftar subkategori yang sudah ditambahkan -->
+  <ion-card *ngFor="let item of kategori.sub">
+    <ion-item lines="none">
+      <!-- Menampilkan nama subkategori -->
+      <ion-label>{{ item }}</ion-label>
+      <!-- Tombol hapus subkategori, memanggil fungsi removeSub(item) -->
+      <ion-button slot="end" fill="clear" (click)="removeSub(item)">
+        <!-- Ikon tempat sampah untuk hapus -->
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-card>
+</ion-content>
+
+<!-- Footer dengan tombol simpan -->
+<ion-footer>
+  <!-- Tombol simpan memanggil fungsi simpan() -->
+  <!-- Tombol dinonaktifkan jika nama kategori belum diisi -->
+  <ion-button expand="block" [disabled]="!kategori.Nama" (click)="simpan()">Simpan</ion-button>
+</ion-footer>
+
+<!--
+Header (Bagian Atas Halaman):
+Menggunakan <ion-header> untuk header yang berisi judul halaman dan tombol kembali (<ion-back-button>).
+
+Input Nama Kategori:
+<ion-input> mengikat data input ke variabel kategori.Nama menggunakan [(ngModel)], yang otomatis mengupdate nilai di TypeScript.
+
+Textarea Keterangan Kategori:
+Menggunakan <ion-textarea> untuk input teks dengan lebih dari satu baris, dihubungkan ke kategori.keterangan.
+
+Subkategori:
+Menampilkan input untuk subkategori dengan tombol tambah yang hanya aktif jika input tidak kosong.
+
+Menampilkan Daftar Subkategori:
+Menggunakan *ngFor untuk loop daftar subkategori yang sudah ditambahkan. Setiap subkategori ditampilkan dalam kartu (<ion-card>), lengkap dengan tombol hapus.
+
+Footer dengan Tombol Simpan:
+Tombol Simpan yang memanggil fungsi simpan() hanya aktif jika nama kategori sudah diisi. Tombol ini ditempatkan di bagian footer untuk kemudahan akses.
+-->

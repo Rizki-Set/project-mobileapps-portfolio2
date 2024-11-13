@@ -1,0 +1,22 @@
+<ion-content>
+  <div *ngIf="cart.length > 0; else emptyCart">
+    <ion-list>
+      <ion-item *ngFor="let item of cart">
+        <ion-label>
+          {{ item.name }} ({{ item.quantity }} x Rp {{ item.price | number }})
+        </ion-label>
+        <ion-label slot="end">
+          Rp {{ (item.price * item.quantity) | number }}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-item>
+      <ion-label><strong>Total Harga</strong></ion-label>
+      <ion-label slot="end"><strong>Rp {{ totalAmount | number }}</strong></ion-label>
+    </ion-item>
+    <ion-button expand="full" (click)="simpanTransaksi()">Simpan Transaksi</ion-button>
+  </div>
+  <ng-template #emptyCart>
+    <ion-label>Keranjang belanja kosong.</ion-label>
+  </ng-template>
+</ion-content>
